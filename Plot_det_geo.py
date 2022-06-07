@@ -8,14 +8,14 @@ def get_specs():
     # Setup the geometry #
     ######################
     geo = container()
-    geo.det_type = 'Eiger2 CdTe'   # [str]  Pilatus3 / Eiger2
-    geo.det_size = '4M'            # [str]  300K 1M 2M 6M / 1M 4M 9M 16M
+    geo.det_type = 'Pilatus3 CdTe' # [str]  Pilatus3 / Eiger2
+    geo.det_size = '2M'            # [str]  300K 1M 2M 6M / 1M 4M 9M 16M
     geo.ener = 21.0                # [keV]  Beam energy
-    geo.dist = 75.0                # [mm]   Detector distance
-    geo.yoff = 0.0                 # [mm]   Detector offset (vertical)
-    geo.rota = 25.0                # [deg]  Detector rotation
+    geo.dist = 176.0               # [mm]   Detector distance
+    geo.yoff = 130.0               # [mm]   Detector offset (vertical)
+    geo.rota = 0.0                 # [deg]  Detector rotation
     geo.tilt = 0.0                 # [deg]  Detector tilt
-    geo.unit = 1                   # [0-3]  Contour legend
+    geo.unit = 2                   # [0-3]  Contour legend
                                    #          0: 2-Theta
                                    #          1: d-spacing
                                    #          2: q-space
@@ -115,7 +115,7 @@ def get_specs():
     plo.cont_standard = True            # [bool]   Plot additional contour lines
                                         #          e.g. a LaB6 standard
     plo.cont_std_alpha = 0.25           # [float]  Standard contour alpha
-    plo.cont_std_color = 'gray'         # [color]  Standard contour color
+    plo.cont_std_color = 'lime'         # [color]  Standard contour color
     plo.cont_std_lw = 2.5               # [float]  Standard contour linewidth
     # - normal incidence contour section - 
     plo.cont_norm_inc = False           # [bool]   Plot additional contour lines
@@ -130,7 +130,7 @@ def get_specs():
     plo.module_alpha = 0.20             # [float]  Detector module alpha
     plo.module_color = 'gray'           # [color]  Detector module color
     plo.margin_top = 0.95               # [float]  Plot margin for title
-    plo.plot_size = 8                   # [int]    Plot size
+    plo.plot_size = 10                  # [int]    Plot size
     plo.label_size = 9                  # [int]    Label size
     plo.plot_dpi = 300                  # [int]    Set plot DPI for saving
     plo.plot_color = 0.35               # [float]  Button color from colormap (0.0 - 1.0)
@@ -138,20 +138,20 @@ def get_specs():
     plo.interactive = True              # [bool]   Make the plot interactive
     plo.action_ener = True              # [bool]   Show energy slider
     plo.action_dist = True              # [bool]   Show distance slider
-    plo.action_rota = True              # [bool]   Show rotation slider
-    plo.action_yoff = True              # [bool]   Show offset slider
-    plo.action_tilt = True              # [bool]   Show tilt slider
+    plo.action_rota = False             # [bool]   Show rotation slider
+    plo.action_yoff = False             # [bool]   Show offset slider
+    plo.action_tilt = False             # [bool]   Show tilt slider
     plo.action_radio = True             # [bool]   Show radio buttons
 
     ##########
     # Limits #
     ##########
     lmt = container()
-    lmt.ener_min = 1.0   # [float] Energy minimum [keV]
-    lmt.ener_max = 100.0 # [float] Energy maximum [keV]
-    lmt.ener_stp = 1.0   # [float] Energy step size [keV]
-    lmt.dist_min = 40.0  # [float] Distance minimum [mm]
-    lmt.dist_max = 150.0 # [float] Distance maximum [mm]
+    lmt.ener_min = 15.0  # [float] Energy minimum [keV]
+    lmt.ener_max = 35.0  # [float] Energy maximum [keV]
+    lmt.ener_stp = 0.1   # [float] Energy step size [keV]
+    lmt.dist_min = 100.0 # [float] Distance minimum [mm]
+    lmt.dist_max = 500.0 # [float] Distance maximum [mm]
     lmt.dist_stp = 1.0   # [float] Distance step size [mm]
     lmt.yoff_min = 0.0   # [float] Offset minimum [mm]
     lmt.yoff_max = 200.0 # [float] Offset maximum [mm]
